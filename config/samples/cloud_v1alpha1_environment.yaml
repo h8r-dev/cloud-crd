@@ -1,0 +1,6 @@
+apiVersion: cloud.heighliner.dev/v1alpha1
+kind: Environment
+metadata:
+  name: environment-sample
+spec:
+  # TODO(user): Add fields here
