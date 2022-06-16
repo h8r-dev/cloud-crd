@@ -3,4 +3,14 @@ layout:
 - go.kubebuilder.io/v3
 projectName: cloud-crd
 repo: github.com/h8r-dev/cloud-crd
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: heighliner.dev
+  group: cloud
+  kind: Repository
+  path: github.com/h8r-dev/cloud-crd/api/v1alpha1
+  version: v1alpha1
 version: "3"
