@@ -1,0 +1,6 @@
+domain: heighliner.dev
+layout:
+- go.kubebuilder.io/v3
+projectName: cloud-crd
+repo: github.com/h8r-dev/cloud-crd
+version: "3"
