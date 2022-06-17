@@ -1,6 +1,14 @@
 apiVersion: cloud.heighliner.dev/v1alpha1
 kind: Repository
 metadata:
-  name: repository-sample
+  name: prefix-shop-frontend
+  labels:
+    app.heighliner.dev/name: shop
 spec:
-  # TODO(user): Add fields here
+  appName: shop
+  source:
+    name: shop-frontend
+    type: frontend|backend|deploy
+    url: https://github.com/h8r-dev/shop-frontend
+    provider: github
+    organization: lyzhang1999

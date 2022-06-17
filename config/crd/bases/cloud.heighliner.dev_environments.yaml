@@ -35,9 +35,29 @@ spec:
           spec:
             description: EnvironmentSpec defines the desired state of Environment
             properties:
-              foo:
-                description: Foo is an example field of Environment. Edit environment_types.go
-                  to remove/update
+              access:
+                properties:
+                  previewURL:
+                    type: string
+                type: object
+              chart:
+                properties:
+                  defaultBranch:
+                    type: string
+                  path:
+                    type: string
+                  type:
+                    type: string
+                  url:
+                    type: string
+                  valuesFile:
+                    type: string
+                  version:
+                    type: string
+                type: object
+              name:
+                type: string
+              namespace:
                 type: string
             type: object
           status:

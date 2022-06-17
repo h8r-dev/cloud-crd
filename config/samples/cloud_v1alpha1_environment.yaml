@@ -1,6 +1,20 @@
 apiVersion: cloud.heighliner.dev/v1alpha1
 kind: Environment
 metadata:
-  name: environment-sample
+  name: dev
+  labels:
+    app.heighliner.dev/name: shop
 spec:
-  # TODO(user): Add fields here
+  name: dev
+  namespace: dev
+  chart:
+    version: "0.0.1"
+    url: "https://github.com/h8r-dev/shop-deploy"
+    type: "github"
+    path: "/shop"
+    valuesFile: "values.yaml"
+    defaultBranch: "main"
+  access:
+    previewURL: https://www.h8r.io
+status:
+  phase: Running

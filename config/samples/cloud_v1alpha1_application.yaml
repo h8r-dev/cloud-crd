@@ -1,6 +1,11 @@
 apiVersion: cloud.heighliner.dev/v1alpha1
 kind: Application
 metadata:
-  name: application-sample
+  name: shop
+  labels:
+    app.heighliner.dev/name: shop
 spec:
-  # TODO(user): Add fields here
+  name: shop
+  stack:
+    name: gin-vue
+    version: "0.1.0"
