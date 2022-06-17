@@ -28,8 +28,22 @@ type EnvironmentSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Environment. Edit environment_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Name      string            `json:"name,omitempty"`
+	Namespace string            `json:"namespace,omitempty"`
+	Chart     EnvironmentChart  `json:"chart,omitempty"`
+	Access    EnvironmentAccess `json:"access,omitempty"`
+}
+
+type EnvironmentChart struct {
+	Version       string `json:"version,omitempty"`
+	URL           string `json:"url,omitempty"`
+	Type          string `json:"type,omitempty"`
+	Path          string `json:"path,omitempty"`
+	ValuesFile    string `json:"valuesFile,omitempty"`
+	DefaultBranch string `json:"defaultBranch,omitempty"`
+}
+type EnvironmentAccess struct {
+	PreviewURL string `json:"previewURL,omitempty"`
 }
 
 // EnvironmentStatus defines the observed state of Environment

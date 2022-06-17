@@ -28,8 +28,13 @@ type ApplicationSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of Application. Edit application_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	Name  string           `json:"name,omitempty"`
+	Stack ApplicationStack `json:"stack,omitempty"`
+}
+
+type ApplicationStack struct {
+	Name    string `json:"name,omitempty"`
+	Version string `json:"version,omitempty"`
 }
 
 // ApplicationStatus defines the observed state of Application

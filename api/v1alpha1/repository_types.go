@@ -29,13 +29,23 @@ type RepositorySpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of Repository. Edit repository_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	AppName string           `json:"appName,omitempty"`
+	Source  RepositorySource `json:"source,omitempty"`
+}
+
+type RepositorySource struct {
+	Name         string `json:"name,omitempty"`
+	Type         string `json:"type,omitempty"`
+	URL          string `json:"url,omitempty"`
+	Provider     string `json:"provider,omitempty"`
+	Organization string `json:"organization,omitempty"`
 }
 
 // RepositoryStatus defines the observed state of Repository
 type RepositoryStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	Phase string `json:"phase,omitempty"`
 }
 
 //+kubebuilder:object:root=true
