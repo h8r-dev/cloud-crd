@@ -50,6 +50,7 @@ type RepositoryStatus struct {
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+//+genclient
 
 // Repository is the Schema for the repositories API
 type Repository struct {

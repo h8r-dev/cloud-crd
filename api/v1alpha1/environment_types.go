@@ -54,6 +54,7 @@ type EnvironmentStatus struct {
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+//+genclient
 
 // Environment is the Schema for the environments API
 type Environment struct {
