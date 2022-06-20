@@ -27,6 +27,14 @@ make docker-build docker-push IMG=<some-registry>/cloud-crd:tag
 make deploy IMG=<some-registry>/cloud-crd:tag
 ```
 
+### Generate clientset codes
+
+```sh
+make update-codegen
+```
+
+The codes will be generated into ./generated dir
+
 ### Uninstall CRDs
 To delete the CRDs from the cluster:
 
