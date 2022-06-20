@@ -18,7 +18,11 @@ GROUP_VERSION=${GROUP}:${VERSION}
 SCRIPT_ROOT=$(dirname "${BASH_SOURCE[0]}")/..
 CODEGEN_PKG=${CODEGEN_PKG:-$(cd "${SCRIPT_ROOT}"; ls -d -1 ./vendor/k8s.io/code-generator 2>/dev/null || echo ../code-generator)}
 
-rm -rf ${OUTPUT_PKG}/{clientset,informers,listers}
+GROUP_DIR=${SCRIPT_ROOT}/api/cloud/v1alpha1
+rm -rf $GROUP_DIR
+cp -r api/v1alpha1 $GROUP_DIR
+
+rm -rf ${OUTPUT_PKG}
 
 # generate the code with:
 # --output-base    because this script should also be able to run inside the vendor dir of
@@ -30,3 +34,5 @@ bash "${CODEGEN_PKG}"/generate-groups.sh "client,lister,informer" \
   --go-header-file "${SCRIPT_ROOT}"/hack/boilerplate.go.txt \
   # --output-base "${SCRIPT_ROOT}"
 #  --output-base "${SCRIPT_ROOT}/../../.." \
+
+mv ${MODULE}/${OUTPUT_PKG} ${OUTPUT_PKG}
